@@ -4,10 +4,11 @@
     --light-dark-cyan: hsl(180, 31%, 95%);
     --dark-grayish-cyan: hsl(180, 8%, 52%);
     --gloomy-grayish-cyan: hsl(180, 14%, 20%);
-    --bg-header: url(./images/bg-header-mobile.svg);
+    --bg-header: url(../images/bg-header-mobile.svg);
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -40,7 +41,11 @@ ul {
 
 .filter {
     width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     padding: 1.5em;
     border-radius: .3em;
@@ -48,6 +53,7 @@ ul {
 }
 
 .card, .filter {
+    -webkit-box-shadow: 0 8px 8px hsl(180 29% 50% / 0.3);
     box-shadow: 0 8px 8px hsl(180 29% 50% / 0.3);
 }
 
@@ -68,7 +74,7 @@ ul {
 }
 
 .remove-tag::before {
-    content: url(./images/icon-remove.svg);
+    content: url(../images/icon-remove.svg);
 }
 
 .clear {
@@ -87,7 +93,12 @@ ul {
     background-color: #fff;
     padding: 1em;
     margin-bottom: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     border-radius: .3em;
 }
@@ -118,6 +129,8 @@ ul {
 
 .info-list {
     color: var(--dark-grayish-cyan);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -128,6 +141,8 @@ ul {
 .info-list> :not(:first-child)::before {
     content: "●";
     font-size: .5em;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     margin-right: 2vmin;
     margin-left: 2vmin;
@@ -137,13 +152,19 @@ ul {
     background-color: var(--bg-light-dark-cyan);
     color: var(--desaturated-dark-cyan);
     font-weight: 700;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     font-size: 13px;
     border-radius: .3em;
 }
 
 .requirements-list, .filteredTags {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 1em;
 }
@@ -152,7 +173,7 @@ ul {
     padding: 0.5em;
 }
 
-.tag-item, .filtered-item, .req-item,.info-list> :not(:first-child)::before {
+.tag-item, .filtered-item, .req-item, .info-list> :not(:first-child)::before {
     display: inline-block;
 }
 
@@ -180,22 +201,28 @@ ul {
     .logo {
         display: block;
         width: 25px;
+        -webkit-transform: translateY(-110%) translateX(50%) scale(2);
+        -ms-transform: translateY(-110%) translateX(50%) scale(2);
         transform: translateY(-110%) translateX(50%) scale(2);
     }
 }
 
 @media only screen and (min-width:990px) {
     :root {
-        --bg-header: url(./images/bg-header-desktop.svg);
+        --bg-header: url(../images/bg-header-desktop.svg);
     }
     .remove-tag:hover {
         background-color: var(--gloomy-grayish-cyan);
     }
     .clear:hover {
         color: var(--desaturated-dark-cyan);
+        -webkit-text-decoration-line: underline;
         text-decoration-line: underline;
     }
     .card {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
     .logo {
@@ -206,15 +233,24 @@ ul {
     }
     .position:hover, .req-item:hover, .remove-tag:hover {
         cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
     }
     .req-item:hover {
         background-color: var(--desaturated-dark-cyan);
         color: var(--bg-light-dark-cyan);
+        -webkit-transition: background-color .3s;
+        -o-transition: background-color .3s;
         transition: background-color .3s;
     }
     .requirements-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin-top: 0;
         margin-left: auto;
