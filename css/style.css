@@ -1,0 +1,222 @@
+:root {
+    --desaturated-dark-cyan: hsl(180, 29%, 50%);
+    --bg-light-dark-cyan: hsl(180, 52%, 96%);
+    --light-dark-cyan: hsl(180, 31%, 95%);
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --gloomy-grayish-cyan: hsl(180, 14%, 20%);
+    --bg-header: url(./images/bg-header-mobile.svg);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Spartan', serif;
+    color: var(--gloomy-grayish-cyan);
+    background-color: var(--light-dark-cyan);
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    height: 155px;
+    background-image: var(--bg-header);
+    background-color: var(--desaturated-dark-cyan);
+}
+
+.filter {
+    width: 90%;
+    display: flex;
+    transform: translateY(-50%);
+    padding: 1.5em;
+    border-radius: .3em;
+    background-color: #fff;
+}
+
+.card, .filter {
+    box-shadow: 0 8px 8px hsl(180 29% 50% / 0.3);
+}
+
+.filtered-item {
+    padding-left: .5em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.remove-tag {
+    background-color: var(--desaturated-dark-cyan);
+    color: var(--bg-light-dark-cyan);
+    border-style: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin-left: .5em;
+}
+
+.remove-tag::before {
+    content: url(./images/icon-remove.svg);
+}
+
+.clear {
+    margin-left: auto;
+    background-color: transparent;
+    border-style: none;
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+}
+
+.main {
+    padding: 5em 8% 0 8%;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    border-radius: .3em;
+}
+
+.card__header>* {
+    margin-right: 1em;
+}
+
+.tag {
+    border-radius: 2em;
+    color: #fff;
+    font-size: 10px;
+    padding: .4rem;
+    font-weight: 700;
+}
+
+.featured {
+    border-left: 5px solid var(--desaturated-dark-cyan);
+}
+
+.featured-tag {
+    background-color: var(--gloomy-grayish-cyan);
+}
+
+.new-tag {
+    background-color: var(--desaturated-dark-cyan);
+}
+
+.info-list {
+    color: var(--dark-grayish-cyan);
+    display: flex;
+}
+
+.info-item {
+    font-size: 12.5px;
+}
+
+.info-list> :not(:first-child)::before {
+    content: "●";
+    font-size: .5em;
+    transform: translateY(-50%);
+    margin-right: 2vmin;
+    margin-left: 2vmin;
+}
+
+.filtered-item, .req-item {
+    background-color: var(--bg-light-dark-cyan);
+    color: var(--desaturated-dark-cyan);
+    font-weight: 700;
+    user-select: none;
+    font-size: 13px;
+    border-radius: .3em;
+}
+
+.requirements-list, .filteredTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.req-item {
+    padding: 0.5em;
+}
+
+.tag-item, .filtered-item, .req-item,.info-list> :not(:first-child)::before {
+    display: inline-block;
+}
+
+.position {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.company {
+    font-size: 13px;
+    color: var(--desaturated-dark-cyan);
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (max-width:989px) {
+    .card {
+        max-width: 350px;
+    }
+    .container {
+        border-bottom: 1px solid var(--dark-grayish-cyan);
+    }
+    .logo {
+        display: block;
+        width: 25px;
+        transform: translateY(-110%) translateX(50%) scale(2);
+    }
+}
+
+@media only screen and (min-width:990px) {
+    :root {
+        --bg-header: url(./images/bg-header-desktop.svg);
+    }
+    .remove-tag:hover {
+        background-color: var(--gloomy-grayish-cyan);
+    }
+    .clear:hover {
+        color: var(--desaturated-dark-cyan);
+        text-decoration-line: underline;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .logo {
+        padding-right: 20px;
+    }
+    .position:hover {
+        color: var(--desaturated-dark-cyan);
+    }
+    .position:hover, .req-item:hover, .remove-tag:hover {
+        cursor: pointer;
+        user-select: none;
+    }
+    .req-item:hover {
+        background-color: var(--desaturated-dark-cyan);
+        color: var(--bg-light-dark-cyan);
+        transition: background-color .3s;
+    }
+    .requirements-list {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        margin-left: auto;
+    }
+}
