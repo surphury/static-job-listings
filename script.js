@@ -14,7 +14,7 @@ Array.prototype.includesAll = function (arr = []) {
     for (let i = 0; i < arr.length; i++) {
         itIncludes = this.includes(arr[i]) && itIncludes;
         if (!itIncludes)
-            return false;
+            break;
     }
     return itIncludes;
 }
