@@ -50,7 +50,7 @@ const renderData = (data) => {
         $img.setAttribute('src', jobs.logo);
         $img.setAttribute('alt', `Logo de ${jobs.company}`);
 
-        const $container = newNode({ parent: $card, classes: ['container'] });
+        const $container = newNode({ parent: $card, classes: ['card__container'] });
         const $cardHeader = newNode({ HTMLTag: 'div', parent: $container, classes: ['card__header'] });
 
         newNode({ HTMLTag: 'strong', parent: $cardHeader, txtContent: jobs.company, classes: ['card__company'] });
